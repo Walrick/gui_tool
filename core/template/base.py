@@ -3,6 +3,8 @@
 
 import tkinter as tk
 
+import core.manage_widget as manage_widget
+
 
 class Base:
     def __init__(self, window):
@@ -23,6 +25,7 @@ class Base:
 
         # Instance
         self.window = window
+        self.manage = manage_widget.ManageWidget(self.canvas)
 
         self.canvas.pack(fill=tk.BOTH, side=tk.LEFT, expand=tk.TRUE)
 
