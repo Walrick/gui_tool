@@ -3,10 +3,17 @@
 
 import tkinter as tk
 
+# Instance
 import core.manage_widget as manage_widget
 
+# Heritage
+from core.command_gui.mouse import Mouse
+from core.command_gui.keyboard import Keyboard
+from core.command_gui.command import CommandGUI
+from core.tool.scroolbar import ScrollBar
 
-class Base:
+
+class Base(Mouse, Keyboard, CommandGUI, ScrollBar):
     def __init__(self, window):
 
         # width screen
@@ -26,6 +33,13 @@ class Base:
         # Instance
         self.window = window
         self.manage = manage_widget.ManageWidget(self.canvas)
+
+        # Init ScrollBar Héritage
+        ScrollBar.__init__(self)
+
+        # Init Keyboard and Mouse Héritage
+        Keyboard.__init__(self)
+        Mouse.__init__(self)
 
         self.canvas.pack(fill=tk.BOTH, side=tk.LEFT, expand=tk.TRUE)
 

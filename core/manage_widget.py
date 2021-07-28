@@ -3,10 +3,15 @@
 
 
 class ManageWidget:
-    def __init__(self, context):
-        self.list_item = {
+    """
+    ManageWidget manages widgets
+    """
 
-        }
+    def __init__(self, context):
+        """
+        :param context: Canvas instance
+        """
+        self.list_item = {}
         self.context = context
 
         # Init attribute mouse
