@@ -8,7 +8,7 @@ import core.main as main
 
 class App:
     """
-    Alpha branch
+    GUI tool project
     """
     def __init__(self):
 

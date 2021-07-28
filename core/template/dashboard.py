@@ -7,6 +7,9 @@ from core.template.base import Base
 
 
 class Dashboard(Base):
+    """
+    Test template and example
+    """
     def __init__(self, window):
 
         # Init Base Template Héritage
