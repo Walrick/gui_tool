@@ -26,8 +26,10 @@ class Main(tk.Tk):
             width=setting.screen["resizable"]["width"],
         )
 
+        self.window = self
+
         # Init template manager
-        self.template = template_manager.Template(self)
+        self.template = template_manager.Template(self.window)
 
     def run(self):
         self.after(self.REFRESH, self.update_gui)

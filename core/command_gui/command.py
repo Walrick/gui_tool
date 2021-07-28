@@ -4,7 +4,7 @@
 
 class CommandGUI:
     """
-    Manage app events
+    Manage command events
     """
     def quit_gui(self):
 
