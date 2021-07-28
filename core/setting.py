@@ -7,4 +7,3 @@ screen = {
     "title": "Python Project",
     "resizable": {"height": True, "width": True},
 }
-

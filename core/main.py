@@ -3,7 +3,8 @@
 
 import tkinter as tk
 
-import setting
+import core.setting as setting
+import core.template_manager as template_manager
 
 
 class Main(tk.Tk):
@@ -15,7 +16,7 @@ class Main(tk.Tk):
         # launch command
         self.command(*args)
 
-        # Init Tkinder
+        # Init Tkinter
         tk.Tk.__init__(self)
         self.title(setting.screen["title"])
         self.geometry(setting.screen["screensize"])
@@ -24,6 +25,9 @@ class Main(tk.Tk):
             height=setting.screen["resizable"]["height"],
             width=setting.screen["resizable"]["width"],
         )
+
+        # Init template manager
+        self.template = template_manager.Template(self)
 
     def run(self):
         self.after(self.REFRESH, self.update_gui)
