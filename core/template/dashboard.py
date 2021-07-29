@@ -19,7 +19,3 @@ class Dashboard(Base):
 
         # Create Canvas title
         self.title = self.canvas.create_text(50, 50, text="Dashboard", anchor="w")
-
-    def update(self):
-
-        self.canvas.update_idletasks()

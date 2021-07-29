@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf8 -*-
 
-import pytest
-
 import app
 
 
