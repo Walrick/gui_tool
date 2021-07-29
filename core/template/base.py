@@ -14,6 +14,10 @@ from core.tool.scroolbar import ScrollBar
 
 
 class Base(Mouse, Keyboard, CommandGUI, ScrollBar):
+    """
+    Base is a pre-filled template to inherit and use command functionality
+    """
+
     def __init__(self, window):
 
         # width screen
@@ -44,5 +48,8 @@ class Base(Mouse, Keyboard, CommandGUI, ScrollBar):
         self.canvas.pack(fill=tk.BOTH, side=tk.LEFT, expand=tk.TRUE)
 
     def update(self):
+        """
+        Update the template
+        """
 
         self.canvas.update_idletasks()

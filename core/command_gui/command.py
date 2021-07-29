@@ -8,11 +8,17 @@ class CommandGUI:
     """
 
     def quit_gui(self):
+        """
+        Destroy window and close app
+        """
 
         self.window.destroy()
         self.window.template = None
 
-    def fullscreen(self, event=None):
+    def fullscreen(self):
+        """
+        Change between full screen
+        """
 
         fullscreen_var = self.window.wm_attributes("-fullscreen")
         if fullscreen_var == 1:
@@ -21,6 +27,9 @@ class CommandGUI:
             self.window.attributes("-fullscreen", True)
 
     def draw_dashboard(self):
+        """
+        destroy the old page and load the new one
+        """
 
         self.window.template.active_template.canvas.destroy()
         self.window.template.draw_dashboard()
