@@ -6,6 +6,7 @@ class Mouse:
     """
     Manage mouse events
     """
+
     def __init__(self):
         self.window.bind("<Double-Button-1>", self.double_click_button_1)
         self.window.bind("<Motion>", self.mouse_motion)

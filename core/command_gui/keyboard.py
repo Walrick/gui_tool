@@ -6,6 +6,7 @@ class Keyboard:
     """
     Manage keyboard events
     """
+
     def __init__(self):
 
         # key press alt + enter

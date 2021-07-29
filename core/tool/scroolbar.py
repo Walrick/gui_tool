@@ -8,6 +8,7 @@ class ScrollBar:
     """
     This class is a heritage of the Base template
     """
+
     def __init__(self):
 
         # Init scroolbar

@@ -6,9 +6,11 @@ class CommandGUI:
     """
     Manage command events
     """
+
     def quit_gui(self):
 
         self.window.destroy()
+        self.window.template = None
 
     def fullscreen(self, event=None):
 

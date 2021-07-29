@@ -22,6 +22,7 @@ class Event:
     """
     Event object
     """
+
     x = 20
     y = 25
 
@@ -48,7 +49,9 @@ class TestCommandMouse:
     def test_double_double_click_button_1(self, param_tkinter, param_event):
         self.template_manager = template_manager.Template(param_tkinter)
         self.template_manager.active_template.double_click_button_1(param_event)
-        assert self.template_manager.active_template.manage.action == "<Double-Button-1>"
+        assert (
+            self.template_manager.active_template.manage.action == "<Double-Button-1>"
+        )
 
     def test_double_click_button_1(self, param_tkinter, param_event):
         self.template_manager = template_manager.Template(param_tkinter)
@@ -57,11 +60,9 @@ class TestCommandMouse:
 
 
 class TestCommandGui:
-
     def test_command_fullscreen(self, param_tkinter):
         self.template_manager = template_manager.Template(param_tkinter)
         self.template_manager.active_template.fullscreen()
         assert self.template_manager.window.wm_attributes("-fullscreen") == 1
         self.template_manager.active_template.fullscreen()
         assert self.template_manager.window.wm_attributes("-fullscreen") == 0
-
