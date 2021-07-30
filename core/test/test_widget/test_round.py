@@ -33,12 +33,16 @@ class TestRound:
         )
         assert round_test.command["<Double-Button-1>"] == "test"
         round_test = self.template_manager.active_template.manage.create_round(
-            10, 10, 20, 20, command=(
+            10,
+            10,
+            20,
+            20,
+            command=(
                 "<Double-Button-1>",
                 "test Double Button-1",
                 "<Button-1>",
                 "test Button-1",
-            )
+            ),
         )
         assert round_test.command["<Double-Button-1>"] == "test Double Button-1"
         assert round_test.command["<Button-1>"] == "test Button-1"
@@ -46,7 +50,8 @@ class TestRound:
     def test_round_draw(self, param_tkinter):
         self.template_manager = template_manager.Template(param_tkinter)
         round_test = self.template_manager.active_template.manage.create_round(
-            10, 10, 20, 20, square_fill="black")
+            10, 10, 20, 20, square_fill="black"
+        )
         assert len(round_test.item_tk) == 2
         round_test.square_fill = None
         round_test.draw()
@@ -55,20 +60,22 @@ class TestRound:
     def test_round_draw_focus(self, param_tkinter):
         self.template_manager = template_manager.Template(param_tkinter)
         round_test = self.template_manager.active_template.manage.create_round(
-            10, 10, 20, 20, square_fill="black")
+            10, 10, 20, 20, square_fill="black"
+        )
         assert round_test.active_focus is False
-        round_test.motion(15,15)
+        round_test.motion(15, 15)
         assert round_test.active_focus is True
-        round_test.motion(25,25)
+        round_test.motion(25, 25)
         assert round_test.active_focus is False
 
     def test_round_update(self, param_tkinter):
         self.template_manager = template_manager.Template(param_tkinter)
         round_test = self.template_manager.active_template.manage.create_round(
-            10, 10, 20, 20, fill="red", square_fill="black")
+            10, 10, 20, 20, fill="red", square_fill="black"
+        )
         assert round_test.fill == "red"
         round_test.update(fill="blue")
         assert round_test.fill == "blue"
-        round_test.motion(15,15)
+        round_test.motion(15, 15)
         round_test.update(fill="red")
         assert round_test.fill == "red"
