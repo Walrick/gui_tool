@@ -31,3 +31,11 @@ class Dashboard(Base):
             fill_mouse="red",
             command=("<Button-1>", self.quit_gui),
         )
+
+        # Create round
+        self.round_test = self.manage.create_round(
+            200, 200, 250, 250, fill="red", fill_mouse="green"
+        )
+
+        # Create text
+        self.text_test = self.manage.create_text(500, 500, text="test", fill="black")
