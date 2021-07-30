@@ -4,18 +4,44 @@
 
 class Rectangle:
     def __init__(self, x1: int, y1: int, x2: int, y2: int, context, **kwargs):
+        """
+        This widget allows you to create rectangle
+        :param x1: int
+        :param y1: int
+        :param x2: int
+        :param y2: int
+        :param context: => context tkinter (here canvas)
+        :param kwargs: Can be composed of (all optional) :{
+        "fill": color of round (str ex:"red" or color hex ex:"#FF0000")
+        "width": frame width (int)
+        "text": create text (str)
+        "anchor": place the text (str)
+        "text_fill": color the text (str ex:"red" or color hex ex:"#FF0000")
+        "text_fill_mouse": color the text if the mouse hovers it
+        (str ex:"red" or color hex ex:"#FF0000")
+        "fill_mouse": color of the circle if the mouse hovers it
+        (str ex:"red" or color hex ex:"#FF0000")
+        "command": couple of command action and effect (action, effet) or
+        (action, effet, action, effet, etc..) ex:
+        ("<Button-1>", "self.quit_gui")
+        "relief": active the relief (bool)
+        }
+        """
 
+        # Initializes mandatory attributes
         self.context = context
         self.x1 = x1
         self.y1 = y1
         self.x2 = x2
         self.y2 = y2
 
+        # Init optional attributes
         self.fill = kwargs.get("fill", "grey")
         self.fill_mouse = kwargs.get("fill_mouse", self.fill)
         self.text = kwargs.get("text", None)
         self.width = kwargs.get("width", None)
 
+        # Init text
         if self.text is not None:
             self.text_fill = kwargs.get("text_fill", "black")
             self.text_fill_mouse = kwargs.get("text_fill_mouse", "black")
@@ -24,6 +50,7 @@ class Rectangle:
                 self.text_x = (self.x2 - self.x1) / 2 + self.x1
                 self.text_y = (self.y2 - self.y1) / 2 + self.y1
 
+        # Init command
         command = kwargs.get("command", None)
         self.command = {}
         if command is not None:
@@ -38,11 +65,13 @@ class Rectangle:
                     self.command[command[index]] = a
                     index += 2
 
+        # Init relief
         self.relief = kwargs.get("relief", False)
         if self.relief:
             self.ligne_1 = [self.x1, self.y2, self.x2, self.y2]
             self.ligne_2 = [self.x2, self.y1, self.x2, self.y2]
 
+        # Init other attribut
         self.active_focus = False
         self.item_tk = []
         self.x = 0

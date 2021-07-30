@@ -90,11 +90,11 @@ class TestRectangle:
     def test_rectangle_update(self, param_tkinter):
         self.template_manager = template_manager.Template(param_tkinter)
         rectangle_test = self.template_manager.active_template.manage.create_rectangle(
-            10, 10, 20, 20, relief=True, text="test", fill="red"
+            10, 10, 20, 20, relief=True, text="test", fill="#FF0000"
         )
-        assert rectangle_test.fill == "red"
+        assert rectangle_test.fill == "#FF0000"
         rectangle_test.update(fill="blue")
         assert rectangle_test.fill == "blue"
-        rectangle_test.motion(15,15)
+        rectangle_test.motion(15, 15)
         rectangle_test.update(fill="red")
         assert rectangle_test.fill == "red"

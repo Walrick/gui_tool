@@ -14,8 +14,10 @@ class ManageWidget:
         """
         :param context: Canvas instance
         """
-        self.list_item = []
         self.context = context
+
+        # Init the list item for action
+        self.list_item = []
 
         # Init attribute mouse
         self.x = 0

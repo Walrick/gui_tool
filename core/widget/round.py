@@ -4,18 +4,42 @@
 
 class Round:
     def __init__(self, x1: int, y1: int, x2: int, y2: int, context, **kwargs):
+        """
+        This widget allows you to create circles or ovals
+        :param x1: int
+        :param y1: int
+        :param x2: int
+        :param y2: int
+        :param context: => context tkinter (here canvas)
+        :param kwargs: Can be composed of (all optional) :{
+        "square_fill": color of square (str ex:"red" or color hex ex:"#FF0000")
+        "fill": color of round (str ex:"red" or color hex ex:"#FF0000")
+        "width": frame width (int)
+        "fill_mouse": color of the circle if the mouse hovers it
+        (str ex:"red" or color hex ex:"#FF0000")
+        "square_fill_mouse": color of the square if the mouse hovers it
+        (str ex:"red" or color hex ex:"#FF0000")
+        "command": couple of command action and effect (action, effet) or
+        (action, effet, action, effet, etc..) ex:
+        ("<Button-1>", "self.quit_gui")
+        }
+        """
 
+        # Initializes mandatory attributes
         self.x1 = x1
         self.y1 = y1
         self.x2 = x2
         self.y2 = y2
         self.context = context
+
+        # Init optional attributes
         self.square_fill = kwargs.get("square_fill", None)
         self.fill = kwargs.get("fill", "grey")
         self.width = kwargs.get("width", None)
         self.fill_mouse = kwargs.get("fill_mouse", self.fill)
         self.square_fill_mouse = kwargs.get("square_fill_mouse", self.square_fill)
 
+        # Init command
         command = kwargs.get("command", None)
         self.command = {}
         if command is not None:
@@ -30,6 +54,7 @@ class Round:
                     self.command[command[index]] = a
                     index += 2
 
+        # Init other attribut
         self.active_focus = False
         self.item_tk = []
         self.x = 0
