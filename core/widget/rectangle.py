@@ -45,6 +45,8 @@ class Rectangle:
 
         self.active_focus = False
         self.item_tk = []
+        self.x = 0
+        self.y = 0
 
     def draw(self):
         if len(self.item_tk) > 0:
@@ -120,7 +122,19 @@ class Rectangle:
             )
             self.item_tk.append(item)
 
+    def update(self, **kwargs):
+        self.fill = kwargs.get("fill", self.fill)
+        self.fill_mouse = kwargs.get("fill_mouse", self.fill)
+
+        if self.x1 < self.x < self.x2 and self.y1 < self.y < self.y2:
+            self.draw_focus()
+        else:
+            self.draw()
+
     def motion(self, x, y):
+
+        self.x = x
+        self.y = y
 
         if self.x1 < x < self.x2 and self.y1 < y < self.y2:
             if not self.active_focus:
