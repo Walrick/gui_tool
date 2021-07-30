@@ -24,7 +24,6 @@ class TestRectangle:
         rectangle_test = self.template_manager.active_template.manage.create_rectangle(
             10, 10, 20, 20
         )
-        assert len(self.template_manager.active_template.manage.list_item) == 1
         assert rectangle_test.x1 == 10
 
     def test_rectangle_init_text(self, param_tkinter):

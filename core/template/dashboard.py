@@ -19,3 +19,15 @@ class Dashboard(Base):
 
         # Create Canvas title
         self.title = self.canvas.create_text(50, 50, text="Dashboard", anchor="w")
+
+        # Create button quit
+        self.button_quit = self.manage.create_rectangle(
+            50,
+            100,
+            100,
+            150,
+            text="quit",
+            fill="white",
+            fill_mouse="red",
+            command=("<Button-1>", self.quit_gui),
+        )
