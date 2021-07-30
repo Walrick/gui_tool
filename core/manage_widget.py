@@ -2,6 +2,7 @@
 # -*- coding: utf8 -*-
 
 from core.widget.rectangle import Rectangle
+from core.widget.round import Round
 
 
 class ManageWidget:
@@ -24,6 +25,13 @@ class ManageWidget:
     def create_rectangle(self, x1, y1, x2, y2, **kwargs):
 
         item = Rectangle(x1, y1, x2, y2, self.context, **kwargs)
+        item.draw()
+        self.list_item += [item]
+        return item
+
+    def create_round(self, x1, y1, x2, y2, **kwargs):
+
+        item = Round(x1, y1, x2, y2, self.context, **kwargs)
         item.draw()
         self.list_item += [item]
         return item
