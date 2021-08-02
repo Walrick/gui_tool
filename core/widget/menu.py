@@ -167,7 +167,7 @@ class Menu(Rectangle):
                         for item_cascade in self.cascade[item]:
                             item_cascade.motion(x, y)
 
-    def menu_command(self, x, y, action):
+    def commande(self, x, y, action):
 
         if self.label_active:
             for item in self.label:
@@ -176,9 +176,6 @@ class Menu(Rectangle):
                         for item_cascade in self.cascade[item]:
                             item_cascade.commande(x, y, action)
                 item.commande(x, y, action)
-        self.commande(x, y, action)
-
-    def commande(self, x, y, action):
 
         if action in self.command:
             if self.x1 < x < self.x2 and self.y1 < y < self.y2:

@@ -114,3 +114,36 @@ class TestMenu:
         menu_test.label[0].cascade_active = True
         menu_test.motion(120, 30)
         assert menu_test.cascade[menu_test.label[0]][0].active_focus is True
+
+    def test_menu_command(self, param_tkinter):
+        self.template_manager = template_manager.Template(param_tkinter)
+        menu_test = self.template_manager.active_template.manage.create_menu(
+            10, 10, 20, 20
+        )
+        menu_test.add_label("test_label_1")
+        menu_test.commande(15, 15, "<Button-1>")
+        assert menu_test.label_active is True
+        menu_test.commande(15, 15, "<Button-1>")
+        assert menu_test.label_active is False
+
+    def test_menu_command_2(self, param_tkinter):
+        self.template_manager = template_manager.Template(param_tkinter)
+        menu_test = self.template_manager.active_template.manage.create_menu(
+            10, 10, 20, 20
+        )
+        test_label_int = menu_test.add_label("test_label_1")
+        menu_test.add_cascade("test_cascade_1", test_label_int)
+        menu_test.motion(15, 15)
+        menu_test.commande(15, 15, "<Button-1>")
+        assert menu_test.label_active is True
+        menu_test.motion(15, 30)
+        menu_test.commande(15, 30, "<Button-1>")
+        assert menu_test.label[0].cascade_active is True
+        menu_test.commande(15, 30, "<Button-1>")
+        assert menu_test.label[0].cascade_active is False
+        menu_test.commande(15, 30, "<Button-1>")
+        assert menu_test.label[0].cascade_active is True
+        menu_test.motion(500, 500)
+        menu_test.commande(500, 500, "<Button-1>")
+        assert menu_test.label[0].cascade_active is False
+        assert menu_test.label_active is False
