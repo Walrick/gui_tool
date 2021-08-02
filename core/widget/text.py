@@ -27,6 +27,7 @@ class Text:
 
         # Init other attribut
         self.item_tk = []
+        self.item_name = "text"
 
     def draw(self):
 

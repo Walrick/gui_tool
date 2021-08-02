@@ -76,6 +76,7 @@ class Rectangle:
         self.item_tk = []
         self.x = 0
         self.y = 0
+        self.item_name = "rectangle"
 
     def draw(self):
         if len(self.item_tk) > 0:

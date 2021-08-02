@@ -59,6 +59,7 @@ class Round:
         self.item_tk = []
         self.x = 0
         self.y = 0
+        self.item_name = "round"
 
     def draw(self):
         if len(self.item_tk) > 0:
