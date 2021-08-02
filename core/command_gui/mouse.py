@@ -8,11 +8,18 @@ class Mouse:
     """
 
     def __init__(self):
+        """
+        Init mouse event
+        """
         self.window.bind("<Double-Button-1>", self.double_click_button_1)
         self.window.bind("<Motion>", self.mouse_motion)
         self.window.bind("<Button-1>", self.click_button_1)
 
     def mouse_motion(self, event):
+        """
+        Capture mouse movement
+        :param event: objet tkinter
+        """
 
         self.adjust_mousse(event.x, event.y)
         self.manage.motion(self.x, self.y)
