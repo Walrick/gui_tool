@@ -4,6 +4,7 @@
 from core.widget.rectangle import Rectangle
 from core.widget.round import Round
 from core.widget.text import Text
+from core.widget.menu import Menu
 
 
 class ManageWidget:
@@ -96,6 +97,13 @@ class ManageWidget:
 
         item = Text(x1, y1, self.context, **kwargs)
         item.draw()
+        return item
+
+    def create_menu(self, x1: int, y1: int, x2: int, y2: int, **kwargs):
+
+        item = Menu(x1, y1, x2, y2, self.context, **kwargs)
+        item.draw()
+        self.list_item += [item]
         return item
 
     def motion(self, x, y):
