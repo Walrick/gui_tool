@@ -3,13 +3,17 @@
 
 
 class Button:
-    def __init__(self, x, y, context, **kwargs):
+    def __init__(self, x: int, y: int, context, **kwargs):
         """
-
-        :param x:
-        :param y:
-        :param context:
-        :param kwargs:
+        This widget allows you to create button
+        :param x: int
+        :param y: int
+        :param context: => context tkinter (here canvas)
+        :param kwargs: {
+        "active": Set default state of button (Bool)
+        "fill_round": color of round (str ex:"red" or color hex ex:"#FF0000")
+        "fill_body": color of body (str ex:"red" or color hex ex:"#FF0000")
+        "scale": set the scale (float)
         """
 
         self.x = x
@@ -18,9 +22,12 @@ class Button:
         self.active = kwargs.get("active", False)
         self.fill_round = kwargs.get("fill_round", "red")
         self.fill_body = kwargs.get("fill_body", "blue")
+        self.scale = kwargs.get("scale", 1)
 
-        v1 = 30
-        v2 = 10
+        v1 = 30 * self.scale
+        v2 = 10 * self.scale
+
+        # Init command
         self.command = {"<Button-1>": self.active_button}
 
         self.x1 = self.x - v1
@@ -48,6 +55,8 @@ class Button:
             "start": -90,
             "extent": 180,
         }
+
+        # Init other attribut
         self.item_tk = []
 
     def active_button(self):

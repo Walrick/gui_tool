@@ -6,6 +6,28 @@ from core.widget.rectangle import Rectangle
 
 class Menu(Rectangle):
     def __init__(self, x1, y1, x2, y2, context, **kwargs):
+        """
+        This widget allows you to create menu
+        :param x1: int
+        :param y1: int
+        :param x2: int
+        :param y2: int
+        :param context: => context tkinter (here canvas)
+        :param kwargs: {
+        "fill": color of round (str ex:"red" or color hex ex:"#FF0000")
+        "width": frame width (int)
+        "text": create text (str)
+        "anchor": place the text (str)
+        "text_fill": color the text (str ex:"red" or color hex ex:"#FF0000")
+        "text_fill_mouse": color the text if the mouse hovers it
+        (str ex:"red" or color hex ex:"#FF0000")
+        "fill_mouse": color of the circle if the mouse hovers it
+        (str ex:"red" or color hex ex:"#FF0000")
+        "command": couple of command action and effect (action, effet) or
+        (action, effet, action, effet, etc..) ex:
+        ("<Button-1>", "self.quit_gui")
+        "relief": active the relief (bool)
+        """
         Rectangle.__init__(
             self,
             x1,
@@ -16,7 +38,7 @@ class Menu(Rectangle):
             command=("<Button-1>", self.label_draw),
             **kwargs
         )
-
+        # Init other attribut
         self.label = []
         self.cascade = {}
         self.label_active = False
@@ -24,6 +46,12 @@ class Menu(Rectangle):
         self.item_name = "menu"
 
     def add_label(self, text, **kwargs):
+        """
+        Add label link a menu method
+        :param text: str
+        :param kwargs:
+        :return: indice label (int)
+        """
         # TODO remplacer lg et ht par une fonction
         #  qui calcule la dimension en pixel du texte
         lg = 100
@@ -63,6 +91,12 @@ class Menu(Rectangle):
         return len(self.label) - 1
 
     def add_cascade(self, text, item, **kwargs):
+        """
+        Add cascade link a label method
+        :param text: str
+        :param item: indice label (int)
+        :param kwargs:
+        """
         # TODO remplacer lg et ht par une fonction
         #  qui calcule la dimension en pixel du texte
         lg = 100
@@ -103,6 +137,9 @@ class Menu(Rectangle):
         target.cascade_active = False
 
     def cascade_draw(self):
+        """
+        Active cascade, window lateral
+        """
 
         for item in self.label:
             if "target cascade" in item.menu_type:
@@ -126,6 +163,9 @@ class Menu(Rectangle):
                     item.cascade_active = False
 
     def label_draw(self):
+        """
+        Active label window bottom
+        """
 
         if not self.label_active:
             for item in self.label:
@@ -146,6 +186,7 @@ class Menu(Rectangle):
             self.label_active = False
 
     def motion(self, x, y):
+
         self.x = x
         self.y = y
 
