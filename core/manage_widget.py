@@ -5,6 +5,7 @@ from core.widget.rectangle import Rectangle
 from core.widget.round import Round
 from core.widget.text import Text
 from core.widget.menu import Menu
+from core.widget.button import Button
 
 
 class ManageWidget:
@@ -93,6 +94,7 @@ class ManageWidget:
         "text": create text (str)
         "anchor": place the text (str)
         }
+        :return: item (instance text)
         """
 
         item = Text(x1, y1, self.context, **kwargs)
@@ -102,6 +104,12 @@ class ManageWidget:
     def create_menu(self, x1: int, y1: int, x2: int, y2: int, **kwargs):
 
         item = Menu(x1, y1, x2, y2, self.context, **kwargs)
+        item.draw()
+        self.list_item += [item]
+        return item
+
+    def create_button(self, x1: int, y1: int, **kwargs):
+        item = Button(x1, y1, self.context, **kwargs)
         item.draw()
         self.list_item += [item]
         return item
