@@ -8,3 +8,9 @@ screen = {
     "title": "Python Project",
     "resizable": {"height": True, "width": True},
 }
+
+# True is use default template in first
+default_template = True
+
+# set time refresh in ms
+refresh = 200

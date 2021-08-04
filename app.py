@@ -5,6 +5,8 @@ import sys
 
 import tk_gui_tools.main as main
 
+import tk_gui_tools.settings as settings
+
 
 class App:
     """
@@ -15,7 +17,9 @@ class App:
         # get the launch options
         arg = sys.argv
 
-        self.main = main.Main(arg)
+        setting = settings
+
+        self.main = main.Main(arg, settings=setting)
 
     def run(self):
 

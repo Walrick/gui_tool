@@ -5,11 +5,12 @@ import tk_gui_tools.template.dashboard as dashboard
 
 
 class Template:
-    def __init__(self, window):
+    def __init__(self, window, default_template: bool):
 
         self.window = window
 
-        self.active_template = dashboard.Dashboard(self.window)
+        if default_template:
+            self.active_template = dashboard.Dashboard(self.window)
 
     def draw_dashboard(self):
         """
