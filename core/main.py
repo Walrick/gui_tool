@@ -41,9 +41,9 @@ class Main(tk.Tk):
 
     def command(self, *args):
         """
-        Manage command
+        Manage command, not implemented
         :param args:
         :return:
         """
+        print(args)
 
-        pass
