@@ -3,7 +3,7 @@
 
 
 # Héritage
-from core.template.base import Base
+from tk_gui_tools.template.base import Base
 
 
 class Dashboard(Base):

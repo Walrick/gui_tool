@@ -1,7 +1,7 @@
 import pytest
 import tkinter as tk
 
-import core.template_manager as template_manager
+import tk_gui_tools.template_manager as template_manager
 
 
 @pytest.fixture

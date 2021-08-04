@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf8 -*-
 
-from core.widget.rectangle import Rectangle
+from tk_gui_tools.widget.rectangle import Rectangle
 
 
 class Menu(Rectangle):

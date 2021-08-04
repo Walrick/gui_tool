@@ -3,8 +3,8 @@
 
 import tkinter as tk
 
-import core.setting as setting
-import core.template_manager as template_manager
+import tk_gui_tools.setting as setting
+import tk_gui_tools.template_manager as template_manager
 
 
 class Main(tk.Tk):

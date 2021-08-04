@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: utf8 -*-
 
-from core.widget.rectangle import Rectangle
-from core.widget.round import Round
-from core.widget.text import Text
-from core.widget.menu import Menu
-from core.widget.button import Button
+from tk_gui_tools.widget.rectangle import Rectangle
+from tk_gui_tools.widget.round import Round
+from tk_gui_tools.widget.text import Text
+from tk_gui_tools.widget.menu import Menu
+from tk_gui_tools.widget.button import Button
 
 
 class ManageWidget:

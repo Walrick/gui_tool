@@ -4,13 +4,13 @@
 import tkinter as tk
 
 # Instance
-import core.manage_widget as manage_widget
+import tk_gui_tools.manage_widget as manage_widget
 
 # Heritage
-from core.command_gui.mouse import Mouse
-from core.command_gui.keyboard import Keyboard
-from core.command_gui.command import CommandGUI
-from core.tool.scroolbar import ScrollBar
+from tk_gui_tools.command_gui.mouse import Mouse
+from tk_gui_tools.command_gui.keyboard import Keyboard
+from tk_gui_tools.command_gui.command import CommandGUI
+from tk_gui_tools.tool.scroolbar import ScrollBar
 
 
 class Base(Mouse, Keyboard, CommandGUI, ScrollBar):

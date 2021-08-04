@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf8 -*-
 
-import core.template.dashboard as dashboard
+import tk_gui_tools.template.dashboard as dashboard
 
 
 class Template:

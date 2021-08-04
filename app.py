@@ -3,7 +3,7 @@
 
 import sys
 
-import core.main as main
+import tk_gui_tools.main as main
 
 
 class App:

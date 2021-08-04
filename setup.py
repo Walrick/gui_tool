@@ -4,10 +4,10 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name='gui_tool',
+    name='guitool',
     version='0.1',
-    packages=['core', 'core.test', 'core.test.test_widget', 'core.tool', 'core.widget', 'core.template',
-              'core.command_gui'],
+    packages=['tk_gui_tools', 'tk_gui_tools.test', 'tk_gui_tools.test.test_widget', 'tk_gui_tools.tool', 'tk_gui_tools.widget', 'tk_gui_tools.template',
+              'tk_gui_tools.command_gui'],
     url='https://github.com/Walrick/gui_tool',
     license='MIT License',
     author='Jeremy COMBES',
