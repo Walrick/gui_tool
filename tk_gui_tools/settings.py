@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf8 -*-
 
-# Default setting screen
+# Default settings screen
 screen = {
     "screensize": "1920x1080",
     "fullscreen": False,
