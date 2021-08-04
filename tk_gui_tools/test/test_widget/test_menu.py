@@ -17,14 +17,14 @@ def param_tkinter():
 
 class TestMenu:
     def test_menu_init(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         menu_test = self.template_manager.active_template.manage.create_menu(
             10, 10, 20, 20
         )
         assert menu_test.x1 == 10
 
     def test_menu_label(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         menu_test = self.template_manager.active_template.manage.create_menu(
             10, 10, 20, 20
         )
@@ -36,7 +36,7 @@ class TestMenu:
         assert menu_test.label[0].y2 == 41
 
     def test_menu_label_2(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         menu_test = self.template_manager.active_template.manage.create_menu(
             10, 10, 20, 20
         )
@@ -49,7 +49,7 @@ class TestMenu:
         assert menu_test.label[1].y2 == 61
 
     def test_menu_cascade(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         menu_test = self.template_manager.active_template.manage.create_menu(
             10, 10, 20, 20
         )
@@ -62,7 +62,7 @@ class TestMenu:
         assert menu_test.cascade[menu_test.label[0]][0].y2 == 41
 
     def test_menu_cascade_2(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         menu_test = self.template_manager.active_template.manage.create_menu(
             10, 10, 20, 20
         )
@@ -76,7 +76,7 @@ class TestMenu:
         assert menu_test.cascade[menu_test.label[0]][1].y2 == 61
 
     def test_menu_motion(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         menu_test = self.template_manager.active_template.manage.create_menu(
             10, 10, 20, 20
         )
@@ -86,7 +86,7 @@ class TestMenu:
         assert menu_test.active_focus is False
 
     def test_menu_motion_2(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         menu_test = self.template_manager.active_template.manage.create_menu(
             10, 10, 20, 20
         )
@@ -98,7 +98,7 @@ class TestMenu:
         assert menu_test.label[0].active_focus is True
 
     def test_menu_motion_3(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         menu_test = self.template_manager.active_template.manage.create_menu(
             10, 10, 20, 20
         )
@@ -116,7 +116,7 @@ class TestMenu:
         assert menu_test.cascade[menu_test.label[0]][0].active_focus is True
 
     def test_menu_command(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         menu_test = self.template_manager.active_template.manage.create_menu(
             10, 10, 20, 20
         )
@@ -127,7 +127,7 @@ class TestMenu:
         assert menu_test.label_active is False
 
     def test_menu_command_2(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         menu_test = self.template_manager.active_template.manage.create_menu(
             10, 10, 20, 20
         )

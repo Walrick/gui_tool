@@ -20,14 +20,14 @@ def param_tkinter():
 
 class TestRound:
     def test_round_init(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         round_test = self.template_manager.active_template.manage.create_round(
             10, 10, 20, 20
         )
         assert round_test.x1 == 10
 
     def test_round_text(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         round_test = self.template_manager.active_template.manage.create_round(
             10, 10, 20, 20, command=("<Double-Button-1>", "test")
         )
@@ -48,7 +48,7 @@ class TestRound:
         assert round_test.command["<Button-1>"] == "test Button-1"
 
     def test_round_draw(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         round_test = self.template_manager.active_template.manage.create_round(
             10, 10, 20, 20, square_fill="black"
         )
@@ -58,7 +58,7 @@ class TestRound:
         assert len(round_test.item_tk) == 1
 
     def test_round_draw_focus(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         round_test = self.template_manager.active_template.manage.create_round(
             10, 10, 20, 20, square_fill="black"
         )
@@ -69,7 +69,7 @@ class TestRound:
         assert round_test.active_focus is False
 
     def test_round_update(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         round_test = self.template_manager.active_template.manage.create_round(
             10, 10, 20, 20, fill="red", square_fill="black"
         )

@@ -20,5 +20,5 @@ def param_tkinter():
 
 class TestTemplate:
     def test_template_title(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         assert self.template_manager.active_template.template_name == "Dashboard"

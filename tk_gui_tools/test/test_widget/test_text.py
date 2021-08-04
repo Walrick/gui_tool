@@ -20,19 +20,19 @@ def param_tkinter():
 
 class TestRound:
     def test_text_init(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         text_test = self.template_manager.active_template.manage.create_text(10, 10)
         assert text_test.x1 == 10
 
     def test_text_text(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         text_test = self.template_manager.active_template.manage.create_text(
             10, 10, text="test"
         )
         assert text_test.text == "test"
 
     def test_text_draw(self, param_tkinter):
-        self.template_manager = template_manager.Template(param_tkinter)
+        self.template_manager = template_manager.Template(param_tkinter, True)
         text_test = self.template_manager.active_template.manage.create_text(
             10, 10, text="test", fill="red"
         )

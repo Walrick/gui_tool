@@ -8,7 +8,6 @@ import tk_gui_tools.template_manager as template_manager
 
 
 class Main(tk.Tk):
-
     def __init__(self, *args, **kwargs):
 
         # Launch command
@@ -57,4 +56,3 @@ class Main(tk.Tk):
         :return:
         """
         print(args)
-
