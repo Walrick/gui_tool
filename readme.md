@@ -210,7 +210,7 @@ Create_rectangle peut prendre d'autre argument avec kwargs et ils sont tous opti
 ##### fill
 
 Fill permet de remplir d'une couleur le rectangle, la couleur prit en charge est la même que tkinter, on peut écrire "red" ou son format en hex "#FF0000".
-La couleur par default est "grey" si non renseigné.
+La couleur par défaut est "grey" si non renseigné.
 
 ````
 self.manage.create_rectangle(x1, y1, x2, y2, fill="red")
@@ -223,7 +223,7 @@ self.manage.create_rectangle(x1, y1, x2, y2, fill="#FF0000")
 ##### fill_mouse
 
 Fill_mouse permet de changer la couleur quand la souris passe dessus, son fonctionnement est le même que fill.
-La couleur par default est la couleur de fill.
+La couleur par défaut est la couleur de fill.
 
 ````
 self.manage.create_rectangle(x1, y1, x2, y2, fill_mouse="red")
@@ -236,7 +236,7 @@ self.manage.create_rectangle(x1, y1, x2, y2, fill_mouse="#FF0000")
 ##### width
 
 Width permet de choisir l'épaisseur de la bordure. Mettre à 0 pour désactiver
-Par default, la valeur est 1.
+Par défaut, la valeur est 1.
 
 ````
 self.manage.create_rectangle(x1, y1, x2, y2, width=0)
@@ -255,7 +255,7 @@ self.manage.create_rectangle(x1, y1, x2, y2, text="test text")
 ##### anchor
 
 Anchor permet de positionner le texte dans le rectangle.
-Actuellement, la seule position est la position par default, le centre
+Actuellement, la seule position est la position par défaut, le centre
 ````
 self.manage.create_rectangle(x1, y1, x2, y2, text="test text", anchor="center")
 
@@ -263,7 +263,7 @@ self.manage.create_rectangle(x1, y1, x2, y2, text="test text", anchor="center")
 
 ##### text_fill
 
-Text_fill permet de donner une couleur au texte, la couleur par default est noir.
+Text_fill permet de donner une couleur au texte, la couleur par défaut est noir.
 La couleur fonctionne de la même manière que fill.
 
 ````
@@ -277,7 +277,7 @@ self.manage.create_rectangle(x1, y1, x2, y2, text="test text", fill_text="#FF000
 ##### text_fill_mouse
 
 Text_fill_mouse permet de changer la couleur du texte quand la souris passe sur le rectangle.
-La couleur par default est text_fill.
+La couleur par défaut est text_fill.
 
 ````
 self.manage.create_rectangle(x1, y1, x2, y2, text="test text", text_fill_mouse="red")
@@ -314,7 +314,7 @@ self.manage.create_rectangle(x1, y1, x2, y2, relief=True)
 
 #### Methode update()
 
-La methode update permet de mettre a jour certain attribut de la classe qui sont initier à sa creation.
+La methode update permet de mettre a jour certain attribut de la classe qui sont initié à sa creation.
 Les arguments sont fill et fill_mouse pour le moment.
 
 Dans l'init du template :
@@ -358,16 +358,10 @@ Les points x1 et y1 corresponde au debut de l'ovale en haut a gauche et x2 et y2
 Create_round peut prendre d'autre argument avec kwargs et ils sont tous optionnels. 
 
 
-        "command": couple of command action and effect (action, effet) or
-        (action, effet, action, effet, etc..) ex:
-        ("<Button-1>", "self.quit_gui")
-        }
-        """
-
 ##### fill
 
 Fill permet de remplir d'une couleur de l'ovale, la couleur prit en charge est la même que tkinter, on peut écrire "red" ou son format en hex "#FF0000".
-La couleur par default est "grey" si non renseigné.
+La couleur par défaut est "grey" si non renseigné.
 
 ````
 self.manage.create_round(x1, y1, x2, y2, fill="red")
@@ -380,7 +374,7 @@ self.manage.create_round(x1, y1, x2, y2, fill="#FF0000")
 ##### fill_mouse
 
 Fill_mouse permet de changer la couleur quand la souris passe dessus, son fonctionnement est le même que fill.
-La couleur par default est la couleur de fill.
+La couleur par défaut est la couleur de fill.
 
 ````
 self.manage.create_round(x1, y1, x2, y2, fill_mouse="red")
@@ -393,7 +387,7 @@ self.manage.create_round(x1, y1, x2, y2, fill_mouse="#FF0000")
 ##### width
 
 Width permet de choisir l'épaisseur de la bordure. Mettre à 0 pour désactiver
-Par default, la valeur est 1.
+Par défaut, la valeur est 1.
 
 ````
 self.manage.create_round(x1, y1, x2, y2, width=0)
@@ -403,7 +397,7 @@ self.manage.create_round(x1, y1, x2, y2, width=0)
 ##### square_fill
 
 Square_fill permet de remplir d'une couleur le rectangle obtenu avec les deux points de construction. La couleur prit en charge est la même que tkinter, on peut écrire "red" ou son format en hex "#FF0000".
-La couleur par default est None si non renseigné et donc transparent.
+La couleur par défaut est None si non renseigné et donc transparent.
 
 ````
 self.manage.create_round(x1, y1, x2, y2, square_fill="red")
@@ -416,7 +410,7 @@ self.manage.create_round(x1, y1, x2, y2, square_fill="#FF0000")
 ##### square_fill_mouse
 
 Square_fill_mouse permet de changer la couleur quand la souris passe dessus, son fonctionnement est le même que Square_fill.
-La couleur par default est la couleur de Square_fill.
+La couleur par défaut est la couleur de Square_fill.
 
 ````
 self.manage.create_round(x1, y1, x2, y2, fill_mouse="red")
@@ -443,19 +437,301 @@ self.manage.create_round(x1, y1, x2, y2, command=("<Button-1>", self.quit_gui, "
 ````
 Ici comme au premier exemple, le clique gauche activera la commande self.quit_gui mais également, le double clique gauche.
 
+#### Methode update()
+
+Comme avec la methode update du rectangle, la methode permet de mettre a jour certain attribut de la classe qui sont initié à sa creation.
+Les arguments sont fill et fill_mouse pour le moment.
+
+Dans l'init du template :
+````
+self.round_test = self.manage.create_round(x1, y1, x2, y2, fill="red")
+
+````
+
+Dans la methode update() du template :
+````
+self.round_test.update(fill="green")
+
+````
+
 ### Text
+
+Le texte se crée depuis le template. Il faut instancier la classe depuis le template en lui donnant plusieurs paramètres pour avoir l'effet voulu.
+La classe retourne un objet.
+
+````
+self.text = self.manage.create_text(x1, y1, text="test")
+```` 
+
+On peut aussi appeler la methode update décrite plus bas.
+		
+#### Arguments obligatoires
+
+La méthode pour appeler le text est la suivante : self.manage.create_text(x1, y1). Ceci est le code minimal pour créer un texte, même si rien ne sera ecrit dans ce cas là.
+
+Les points x1 et y1 corresponde au point d'encrage, l'encre ou anchor ici, sera décrit plus bas.
+````
+:param x1: int 
+:param y1: int
+````
+
+#### Arguments optionnels
+Create_text peut prendre d'autre argument avec kwargs et ils sont tous optionnels. 
+
+##### text
+
+Text permet d'afficher le texte
+````
+self.text = self.manage.create_text(x1, y1, text="test")
+```` 
+
+##### Anchor
+
+Anchor permet de modifier le debut d'affichage du texte.
+Par défaut, vaut 'center' ce qui signifie que le texte est centré par rapport à la position (x,y)
+````
+self.text = self.manage.create_text(x1, y1, text="test", anchor="center")
+```` 
+
+##### Fill
+
+Fill permet de remplir d'une couleur du texte, la couleur prit en charge est la même que tkinter, on peut écrire "red" ou son format en hex "#FF0000".
+La couleur par défaut est "black" si non renseigné.
+
+````
+self.manage.create_text(x1, y1, text="test", fill="red")
+
+or
+
+self.manage.create_text(x1, y1, text="test", fill="#FF0000")
+````
+
+#### Methode update()
+
+Comme avec la methode update du rectangle, la methode permet de mettre a jour certain attribut de la classe qui sont initier à sa creation.
+Les arguments sont fill et text pour le moment.
+
+Dans l'init du template :
+````
+self.text_test = self.manage.create_text(x1, y1, text="test", fill="red")
+
+````
+
+Dans la methode update() du template :
+````
+self.text_test.update(fill="green")
+
+````
 
 ### Button
 
+Le bouton est un objet graphique qui n'est pas intégré au canvas de tkinter, ce bouton là est en deux états, actif ou non.
+Le corps du bouton est composé d'un rectangle au centre superposé d'un rond qui se déplace d'un côté et de l'autre du rectangle pour montrer visuellement si le bouton est actif.
+````
+self.button = self.manage.create_button(x1, y1)
+````
+Astuce :
+Pour créer un bouton simple, les widgets rectangles ou rounds permettent de faire cela en liant une action quand on clique dessus.
+
+#### Arguments obligatoires
+
+La méthode pour appeler le bouton est la suivante : self.manage.create_button(x1, y1). Ceci est le code minimal pour créer un bouton.
+
+Les points x1 et y1 corresponde au centre du bouton
+````
+:param x1: int 
+:param y1: int
+````
+
+#### Arguments optionnels
+
+Create_button peut prendre d'autre argument avec kwargs et ils sont tous optionnels. 
+
+##### Active
+
+Active permet de choisir si le bouton est activé au debut.
+Par défaut, le bouton sera désactivé.
+````
+self.button = self.manage.create_button(x1, y1, active=True)
+````
+
+##### Fill_round
+
+Fill_round permet de choisir la couleur de la partie ronde du bouton
+Par défaut, la couleur est "red"
+````
+self.button = self.manage.create_button(x1, y1, fill_round="black")
+````
+
+##### Fill_body
+
+Fill_body permet de choisir la couleur de la partie rectangle du bouton
+Par défaut, la couleur est "blue"
+````
+self.button = self.manage.create_button(x1, y1, fill_body="red")
+````
+
+##### Scale
+
+Scale permet de réger la taille du bouton.
+Par défaut, la taille est sur 1
+
+````
+self.button = self.manage.create_button(x1, y1, scale=2)
+````
+
 ### Menu
+
+Menu est aussi comme button un objet graphique créer.
+Menu permet de créer un menu en ajoutant des labels cascades, sont fonctionnement resemble a Menu() de tkinter mais adapté au canvas.
+
+````
+self.menu = self.manage.create_menu(x1, y1, x2, y2, text="test")
+````
+
+#### Arguments obligatoires
+
+La méthode pour appeler le menu est la suivante : self.manage.create_menu(x1, y1, x2, y2). Ceci est le code minimal pour créer un menu.
+
+Comme avec le rectangle, x1 et y1 représente le points du rectangle en haut à gauche et x2 et y2 représente les points en bas a droite.
+````
+:param x1: int 
+:param y1: int
+:param x2: int 
+:param y2: int
+````
+
+#### Arguments optionnels
+Create_menu reprend tous les points du rectangle, sauf la commande qui sera utilisé a déployé la liste déroulante de label.
+
+#### Méthode add_label()
+
+La méthode add_label permet d'ajouter des labels à la liste déroulante quand le menu sera activé.
+Pour l'utilisé, apres avec initié un menu.
+````
+self.menu = self.manage.create_menu(x1, y1, x2, y2, text="test")
+````
+
+Ajouté :
+````
+self.label_menu = self.menu.add_label("label_test")
+````
+Une commande peut être donnée en argument, comme précédemment, il faut donner un tuple (action, commande)
+
+#### Méthode add_cascade()
+
+La méthode add_cascade permet d'ajouter un liste déroulante à un label, la liste sera ouverte à droite de la fenêtre du label.
+Pour l'utiliser, apres avoir initié le menu et le label.
+````
+self.menu = self.manage.create_menu(x1, y1, x2, y2, text="test")
+
+label_menu = self.menu.add_label("label_test")
+````
+
+Ajouté :
+````
+self.menu.add_cascade("cascade_test", label_menu)
+````
+
+Une commande peut être liée en ajoutant :
+
+````
+self.menu.add_cascade("cascade_test", label_menu, command=("<Button-1>", self.quit_gui))
+````
+
 
 ## Commande
 
+tk_gui_tools possède quelques commande mais vous pouvez en ajouter les vôtres.
+Les commandes sont séparées en trois classes, clavier, souris et les commandes personnalisées.
+
 ### Clavier
+
+Pour ajouter des commandes claviers, rien de plus simple.
+Créer une classe ou vous regroupez vos commande lié au clavier.
+````
+class KeyBoard:
+    """
+    Manage keyboard events
+    """
+
+    def __init__(self):
+
+        # key press alt + enter
+        self.window.bind("<Alt-Return>", self.fullscreen)
+
+````
+
+L'utilisation de la methode bind de tkinter qui permet de gérer les events.
+self.fullscreen pointe vers une commande personnalisée que nous verront plus bas.
+
+Pour avoir accès a cette commande, il ne reste plus qu'à faire hériter cette classe à votre template.
+Attention le nom Keyboard pour le nom de la classe est deja utilisé.
 
 ### Souris
 
+Si vous souhaitez ajouter des actions avec la souris en cliquant sur vos widgets, il fraudera là aussi créer une nouvelle classe.
+De base, la capture de la souris, le simple clique gauche et le double clique gauche sont gérés.
+Vous pouvez en rajouter avec :
+````
+class Mous:
+    """
+    Manage mouse events
+    """
+
+    def __init__(self):
+        """
+        Init mouse event
+        """
+		
+        self.window.bind("<Button-3>", self.click_button_3)
+
+
+    def self.click_button_3(self, event):
+
+        self.adjust_mousse(event.x, event.y)
+        self.manage.command(self.x, self.y, "<Button-3>")
+		
+````
+
+Cette exemple permet d'ajouter le clique droit à la boucle d'évenement de manage et donc sur vos widgets.
+L'appel de la méthode self.adjust_mousse(event.x, event.y) permet d'ajuster le déplacement de la souris avec la position véritable de la fenêtre sur vous utilisé scroolbar.
+Comme pour les commande clavier, il ne reste plus qu'à hériter la classe à vote template. 
+Attention le nom Mouse pour la classe est deja utilisé
+
 ### Commande personnalisée
+
+Vous pouvez créer vos commandes qui sont données à vos widgets.
+
+Pour cela il vous faut une nouvelle classe :
+````
+class CommandGui:
+    """
+    Manage command events
+    """
+	
+	def draw_dashboard(self):
+		"""
+		destroy the old page and load the new one
+		"""
+
+		self.window.template.active_template.canvas.destroy()
+		self.window.template.draw_dashboard()
+	
+	def quit_gui(self):
+		"""
+		Destroy window and close app
+		"""
+
+		self.window.destroy()
+		self.window.template = None
+		
+````
+
+Il ne reste plus qu'à faire hériter votre classe à votre template.
+C'est ici par exemple ou vous pouvez mettre la commande pour charger un nouveau template avec l'exemple draw_dashboard
+
+
 
 
 
