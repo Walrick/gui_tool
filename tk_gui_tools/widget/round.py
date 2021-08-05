@@ -35,7 +35,7 @@ class Round:
         # Init optional attributes
         self.square_fill = kwargs.get("square_fill", None)
         self.fill = kwargs.get("fill", "grey")
-        self.width = kwargs.get("width", None)
+        self.width = kwargs.get("width", 1)
         self.fill_mouse = kwargs.get("fill_mouse", self.fill)
         self.square_fill_mouse = kwargs.get("square_fill_mouse", self.square_fill)
 

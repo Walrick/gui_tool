@@ -171,14 +171,74 @@ class FirstTemplate(Base):
 ````
 
 Notre template a besoin d'hériter de Base et de l’initialiser en lui donnant l’argument window, ensuite il ne reste plus cas utiliser les widgets pour afficher ce que l’on veut.
-Les widgets de tk_gui_tools sont accessibles au travers de la classe manage qui s’initialise en héritant de Base. Notez aussi qu’il est possible d’utiliser les widgets de Tkinter comme dans l’exemple de self.title en utilisant self.canvas.create_text(… etc)
-Les widgets de tk_gui_tools appelez avec self.manage.create_rectangle par exemple sont décrit dans la section Widget
+Les widgets de tk_gui_tools sont accessibles au travers de la classe manage qui s’initialise en héritant de Base. Notez aussi qu’il est possible d’utiliser les widgets de Tkinter comme dans l’exemple de self.title en utilisant self.canvas.create_text(… etc).
+Les widgets de tk_gui_tools appelez avec self.manage.create_rectangle par exemple sont décrit dans la section Widget.
 Il est possible de mettre a jour de le template grace a la méthode update(), le temps défini dans refresh sera utilisé pour appeler update(), si refresh est définis sur 200 ms, update() sera appelé toutes les 200 ms.
 
 
 ## Widget
+Les widgets de tk_gui_tools sont des widgets qui sont basé sur ceux de tkinter.
+Actuellement, le rectangle, le rond et le texte sont implémentés. Button et Menu sont des assemblages graphiques des trois premiers widgets 
 
 ### Rectangle
+
+
+        "width": frame width (int)
+        "text": create text (str)
+        "anchor": place the text (str)
+        "text_fill": color the text (str ex:"red" or color hex ex:"#FF0000")
+        "text_fill_mouse": color the text if the mouse hovers it
+        (str ex:"red" or color hex ex:"#FF0000")
+        (str ex:"red" or color hex ex:"#FF0000")
+        "command": couple of command action and effect (action, effet) or
+        (action, effet, action, effet, etc..) ex:
+        ("<Button-1>", "self.quit_gui")
+        "relief": active the relief (bool)
+		
+#### Arguments obligatoires
+
+La méthode pour appeler le rectangle est la suivante : self.manage.create_rectangle(x1, y1, x2, y2). Ceci est le code minimal pour créer un rectangle.
+
+Les points x1 et y1 corresponde au debut du rectangle en haut a gauche et x2 et y2 correspond au point en bas a gauche
+````
+:param x1: int 
+:param y1: int
+:param x2: int
+:param y2: int
+````
+
+Create_rectangle peut prendre d'autre argument avec kwargs et ils sont tous optionnels. 
+
+#### fill
+
+Fill permet de remplir d'une couleur le rectangle, la couleur prit en charge est la même que tkinter, on peut écrire "red" ou son format en hex "#FF0000"
+La couleur par default est "grey" si non renseigné
+
+````
+self.manage.create_rectangle(x1, y1, x2, y2, fill="red")
+
+or
+
+self.manage.create_rectangle(x1, y1, x2, y2, fill="#FF0000")
+````
+
+#### fill mouse
+
+#### width
+
+#### text
+
+#### anchor
+
+#### text_fill
+
+#### text_fill_mouse
+
+#### command
+
+#### relief
+
+####
 
 ### Round
 

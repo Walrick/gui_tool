@@ -12,7 +12,7 @@ class Rectangle:
         :param y2: int
         :param context: => context tkinter (here canvas)
         :param kwargs: Can be composed of (all optional) :{
-        "fill": color of round (str ex:"red" or color hex ex:"#FF0000")
+        "fill": color (str ex:"red" or color hex ex:"#FF0000")
         "width": frame width (int)
         "text": create text (str)
         "anchor": place the text (str)
@@ -39,7 +39,7 @@ class Rectangle:
         self.fill = kwargs.get("fill", "grey")
         self.fill_mouse = kwargs.get("fill_mouse", self.fill)
         self.text = kwargs.get("text", None)
-        self.width = kwargs.get("width", None)
+        self.width = kwargs.get("width", 1)
 
         # Init text
         if self.text is not None:
