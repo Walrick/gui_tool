@@ -182,18 +182,15 @@ Actuellement, le rectangle, le rond et le texte sont implémentés. Button et Me
 
 ### Rectangle
 
+Les rectangles se crée depuis le template. Il faut instancier la classe depuis le template en lui donnant plusieurs paramètres pour avoir l'effet voulu.
+La classe retourne un objet.
 
-        "width": frame width (int)
-        "text": create text (str)
-        "anchor": place the text (str)
-        "text_fill": color the text (str ex:"red" or color hex ex:"#FF0000")
-        "text_fill_mouse": color the text if the mouse hovers it
-        (str ex:"red" or color hex ex:"#FF0000")
-        (str ex:"red" or color hex ex:"#FF0000")
-        "command": couple of command action and effect (action, effet) or
-        (action, effet, action, effet, etc..) ex:
-        ("<Button-1>", "self.quit_gui")
-        "relief": active the relief (bool)
+````
+self.rectange = self.manage.create_rectangle(x1, y1, x2, y2)
+```` 
+
+On peut par la suite avoir accès a sont attribut self.rectange.active_focus si la souris passe sur lui.
+On peut aussi appeler la methode update décrite plus bas.
 		
 #### Arguments obligatoires
 
@@ -207,12 +204,13 @@ Les points x1 et y1 corresponde au debut du rectangle en haut a gauche et x2 et 
 :param y2: int
 ````
 
+#### Arguments optionnels
 Create_rectangle peut prendre d'autre argument avec kwargs et ils sont tous optionnels. 
 
-#### fill
+##### fill
 
-Fill permet de remplir d'une couleur le rectangle, la couleur prit en charge est la même que tkinter, on peut écrire "red" ou son format en hex "#FF0000"
-La couleur par default est "grey" si non renseigné
+Fill permet de remplir d'une couleur le rectangle, la couleur prit en charge est la même que tkinter, on peut écrire "red" ou son format en hex "#FF0000".
+La couleur par default est "grey" si non renseigné.
 
 ````
 self.manage.create_rectangle(x1, y1, x2, y2, fill="red")
@@ -222,25 +220,228 @@ or
 self.manage.create_rectangle(x1, y1, x2, y2, fill="#FF0000")
 ````
 
-#### fill mouse
+##### fill_mouse
 
-#### width
+Fill_mouse permet de changer la couleur quand la souris passe dessus, son fonctionnement est le même que fill.
+La couleur par default est la couleur de fill.
 
-#### text
+````
+self.manage.create_rectangle(x1, y1, x2, y2, fill_mouse="red")
 
-#### anchor
+or
 
-#### text_fill
+self.manage.create_rectangle(x1, y1, x2, y2, fill_mouse="#FF0000")
+````
 
-#### text_fill_mouse
+##### width
 
-#### command
+Width permet de choisir l'épaisseur de la bordure. Mettre à 0 pour désactiver
+Par default, la valeur est 1.
 
-#### relief
+````
+self.manage.create_rectangle(x1, y1, x2, y2, width=0)
 
-####
+````
+
+##### text
+
+Text permet d'afficher du texte dans le rectangle.
+
+````
+self.manage.create_rectangle(x1, y1, x2, y2, text="test text")
+
+````
+
+##### anchor
+
+Anchor permet de positionner le texte dans le rectangle.
+Actuellement, la seule position est la position par default, le centre
+````
+self.manage.create_rectangle(x1, y1, x2, y2, text="test text", anchor="center")
+
+````
+
+##### text_fill
+
+Text_fill permet de donner une couleur au texte, la couleur par default est noir.
+La couleur fonctionne de la même manière que fill.
+
+````
+self.manage.create_rectangle(x1, y1, x2, y2, text="test text", fill_text="red")
+
+or
+
+self.manage.create_rectangle(x1, y1, x2, y2, text="test text", fill_text="#FF0000")
+````
+
+##### text_fill_mouse
+
+Text_fill_mouse permet de changer la couleur du texte quand la souris passe sur le rectangle.
+La couleur par default est text_fill.
+
+````
+self.manage.create_rectangle(x1, y1, x2, y2, text="test text", text_fill_mouse="red")
+
+or
+
+self.manage.create_rectangle(x1, y1, x2, y2, text="test text", text_fill_mouse="#FF0000")
+````
+
+##### command
+
+Command permet de donner une action quand on clique sur le rectangle.
+````
+self.manage.create_rectangle(x1, y1, x2, y2, command=("<Button-1>", self.quit_gui))
+
+````
+Dans l'exemple ci-dessus, le premier argument du tuple est l'action à faire sur le rectangle, ici un clique gauche de souris activera self.quit_gui. La syntaxe et la même que tkinter et pour plus d'information se reporter au chapitre des commandes.
+Command peut prendre plusieurs actions, pour se faire, rajouter dans le tuple les deux autres arguments, action - commande à la suite. 
+Exemple :
+
+````
+self.manage.create_rectangle(x1, y1, x2, y2, command=("<Button-1>", self.quit_gui, "<Double-Button-1>", self.quit_gui))
+
+````
+Ici comme au premier exemple, le clique gauche activera la commande self.quit_gui mais également, le double clique gauche.
+
+##### relief
+
+Relief permet d'afficher un relief. Elle fait apparaitre une ligne noire sous le rectangle et à droite du rectangle
+````
+self.manage.create_rectangle(x1, y1, x2, y2, relief=True)
+
+````
+
+#### Methode update()
+
+La methode update permet de mettre a jour certain attribut de la classe qui sont initier à sa creation.
+Les arguments sont fill et fill_mouse pour le moment.
+
+Dans l'init du template :
+````
+self.rectangle = self.manage.create_rectangle(x1, y1, x2, y2, fill="red")
+
+````
+
+Dans la methode update() du template :
+````
+self.rectangle.update(fill="green")
+
+````
 
 ### Round
+
+Pour créer des ovales, comme pour les rectangles, il faut instancier la classe depuis le template en lui donnant plusieurs paramètres pour avoir l'effet voulu.
+La classe retourne un objet.
+
+````
+self.round = self.manage.create_round(x1, y1, x2, y2)
+```` 
+
+On peut par la suite avoir accès a sont attribut self.round.active_focus si la souris passe sur lui.
+On peut aussi appeler la methode update décrite plus bas.
+
+#### Arguments obligatoires
+
+La méthode pour appeler l'ovale est la suivante : self.manage.create_round(x1, y1, x2, y2). Ceci est le code minimal pour créer un ovale.
+
+La methode pour créer un ovale est la même qu'avec tkinter, on place un rectange ou un ovale va venir se créer.
+Les points x1 et y1 corresponde au debut de l'ovale en haut a gauche et x2 et y2 correspond au point en bas a gauche
+````
+:param x1: int 
+:param y1: int
+:param x2: int
+:param y2: int
+````
+
+#### Arguments optionnels
+Create_round peut prendre d'autre argument avec kwargs et ils sont tous optionnels. 
+
+
+        "command": couple of command action and effect (action, effet) or
+        (action, effet, action, effet, etc..) ex:
+        ("<Button-1>", "self.quit_gui")
+        }
+        """
+
+##### fill
+
+Fill permet de remplir d'une couleur de l'ovale, la couleur prit en charge est la même que tkinter, on peut écrire "red" ou son format en hex "#FF0000".
+La couleur par default est "grey" si non renseigné.
+
+````
+self.manage.create_round(x1, y1, x2, y2, fill="red")
+
+or
+
+self.manage.create_round(x1, y1, x2, y2, fill="#FF0000")
+````
+
+##### fill_mouse
+
+Fill_mouse permet de changer la couleur quand la souris passe dessus, son fonctionnement est le même que fill.
+La couleur par default est la couleur de fill.
+
+````
+self.manage.create_round(x1, y1, x2, y2, fill_mouse="red")
+
+or
+
+self.manage.create_round(x1, y1, x2, y2, fill_mouse="#FF0000")
+````
+
+##### width
+
+Width permet de choisir l'épaisseur de la bordure. Mettre à 0 pour désactiver
+Par default, la valeur est 1.
+
+````
+self.manage.create_round(x1, y1, x2, y2, width=0)
+
+````
+
+##### square_fill
+
+Square_fill permet de remplir d'une couleur le rectangle obtenu avec les deux points de construction. La couleur prit en charge est la même que tkinter, on peut écrire "red" ou son format en hex "#FF0000".
+La couleur par default est None si non renseigné et donc transparent.
+
+````
+self.manage.create_round(x1, y1, x2, y2, square_fill="red")
+
+or
+
+self.manage.create_round(x1, y1, x2, y2, square_fill="#FF0000")
+````
+
+##### square_fill_mouse
+
+Square_fill_mouse permet de changer la couleur quand la souris passe dessus, son fonctionnement est le même que Square_fill.
+La couleur par default est la couleur de Square_fill.
+
+````
+self.manage.create_round(x1, y1, x2, y2, fill_mouse="red")
+
+or
+
+self.manage.create_round(x1, y1, x2, y2, fill_mouse="#FF0000")
+````
+
+##### command
+
+Command permet de donner une action quand on clique sur le rectangle.
+````
+self.manage.create_round(x1, y1, x2, y2, command=("<Button-1>", self.quit_gui))
+
+````
+Dans l'exemple ci-dessus, le premier argument du tuple est l'action à faire sur le rectangle, ici un clique gauche de souris activera self.quit_gui. La syntaxe et la même que tkinter et pour plus d'information se reporter au chapitre des commandes.
+Command peut prendre plusieurs actions, pour se faire, rajouter dans le tuple les deux autres arguments, action - commande à la suite. 
+Exemple :
+
+````
+self.manage.create_round(x1, y1, x2, y2, command=("<Button-1>", self.quit_gui, "<Double-Button-1>", self.quit_gui))
+
+````
+Ici comme au premier exemple, le clique gauche activera la commande self.quit_gui mais également, le double clique gauche.
 
 ### Text
 
