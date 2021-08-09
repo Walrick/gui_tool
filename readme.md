@@ -1,7 +1,7 @@
-# Tk_gui_tools
+# Guitool
 
 ![](https://img.shields.io/badge/Coverage-97%25-green)
-![](https://img.shields.io/badge/Version-v0.1-blue)
+![](https://img.shields.io/badge/Version-v0.1.2-blue)
 ![](https://img.shields.io/badge/Licence-MIT-red)
 
 --------------------------------------------------
@@ -9,17 +9,17 @@
 ## Installation
 To install it, just use pip :
 ````
-python -m pip install tk_gui_tools
+python -m pip install guitool
 ````
 
 ## Description
-Tk_gui_tools is an open source package based on the Tkinter canvas. It offers tools and widgets already formed and linked to allow to quickly create interfaces.
+Guitool is an open source package based on the Tkinter canvas. It offers tools and widgets already formed and linked to allow to quickly create interfaces.
 
 
 ## Use - Tutorial
 The package was developed with the idea that a graphical object can be written simply in a template and can be updated with a single method.
 The package is based on the use of Tkinter's canvas.
-The graphic objects called here “widgets” are basically modeled on the widgets of the tkinter canvas.
+The graphic objects called here widgets are basically modeled on the widgets of the tkinter canvas.
 But they were linked from the base to the action of the user, for example: when creating a rectangle, we can define a different color for it if the cursor passes over it or / and link an action to it if we have it click on it.
 The tk_gui_tools package handles the creation of the tkinter environment and the mainloop () but it is necessary to prepare some files.
 
@@ -182,7 +182,7 @@ class FirstTemplate(Base):
 ````
 
 Our template needs to inherit from Base and to initialize by giving it the window argument, then we don't have to use widgets to display what we want.
-The tk_gui_tools widgets are accessible through the manage class which is initialized by inheriting from Base.
+The guitool widgets are accessible through the manage class which is initialized by inheriting from Base.
 Note also that it is possible to use Tkinter widgets as in the example of self.title using self.canvas.create_text (... etc).
 The widgets of tk_gui_tools called with self.manage.create_rectangle, for example, are described in the Widget section.
 It is possible to update the template thanks to the update () method, the time defined in refresh will be used to call update (), if refresh is set to 200 ms, update () will be called every 200 ms.
@@ -653,7 +653,7 @@ self.menu.add_cascade("cascade_test", label_menu, command=("<Button-1>", self.qu
 
 ## Order
 
-tk_gui_tools has a few commands, but you can add your own.
+Guitool has a few commands, but you can add your own.
 The commands are separated into three classes, keyboard, mouse, and custom commands.
 
 ### Keyboard
