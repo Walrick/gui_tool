@@ -152,3 +152,14 @@ class Button:
         if action in self.command:
             if self.x1 < x < self.x2 and self.y1 < y < self.y2:
                 self.command[action]()
+
+    def motion(self, x, y):
+        """
+        not implemented
+        :param x:
+        :param y:
+        :return:
+        """
+
+        if self.x1 < x < self.x2 and self.y1 < y < self.y2:
+            pass
