@@ -102,6 +102,28 @@ class ManageWidget:
         return item
 
     def create_menu(self, x1: int, y1: int, x2: int, y2: int, **kwargs):
+        """
+        This widget allows you to create menu
+        :param x1: int
+        :param y1: int
+        :param x2: int
+        :param y2: int
+        :param kwargs: {
+        "fill": color of round (str ex:"red" or color hex ex:"#FF0000")
+        "width": frame width (int)
+        "text": create text (str)
+        "anchor": place the text (str)
+        "text_fill": color the text (str ex:"red" or color hex ex:"#FF0000")
+        "text_fill_mouse": color the text if the mouse hovers it
+        (str ex:"red" or color hex ex:"#FF0000")
+        "fill_mouse": color of the circle if the mouse hovers it
+        (str ex:"red" or color hex ex:"#FF0000")
+        "command": couple of command action and effect (action, effet) or
+        (action, effet, action, effet, etc..) ex:
+        ("<Button-1>", "self.quit_gui")
+        "relief": active the relief (bool)
+        :return: item (instance menu)
+        """
 
         item = Menu(x1, y1, x2, y2, self.context, **kwargs)
         item.draw()
@@ -109,6 +131,19 @@ class ManageWidget:
         return item
 
     def create_button(self, x1: int, y1: int, **kwargs):
+        """
+        This widget allows you to create button
+        :param x1: int
+        :param y1: int
+        :param context: => context tkinter (here canvas)
+        :param kwargs: {
+        "active": Set default state of button (Bool)
+        "fill_round": color of round (str ex:"red" or color hex ex:"#FF0000")
+        "fill_body": color of body (str ex:"red" or color hex ex:"#FF0000")
+        "scale": set the scale (float)
+        :return: item (instance button)
+        """
+
         item = Button(x1, y1, self.context, **kwargs)
         item.draw()
         self.list_item += [item]
