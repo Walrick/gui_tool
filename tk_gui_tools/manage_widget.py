@@ -135,7 +135,6 @@ class ManageWidget:
         This widget allows you to create button
         :param x1: int
         :param y1: int
-        :param context: => context tkinter (here canvas)
         :param kwargs: {
         "active": Set default state of button (Bool)
         "fill_round": color of round (str ex:"red" or color hex ex:"#FF0000")
