@@ -1,5 +1,6 @@
 import pytest
 import tkinter as tk
+import time
 
 import tk_gui_tools.template_manager as template_manager
 
@@ -8,6 +9,7 @@ import tk_gui_tools.template_manager as template_manager
 def param_tkinter():
     # Init Tkinter
     root = tk.Tk()
+    time.sleep(0.1)
     root.title("Python Project")
     root.geometry("1920x1080")
     root.attributes("-fullscreen", False)
