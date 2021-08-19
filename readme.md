@@ -1,20 +1,29 @@
 # Guitool
 
 ![](https://img.shields.io/badge/Coverage-97%25-green)
-![](https://img.shields.io/badge/Version-v0.1.2-blue)
+![](https://img.shields.io/badge/Version-v0.1.3-blue)
 ![](https://img.shields.io/badge/Licence-MIT-red)
 
 --------------------------------------------------
+-------------------------------------------------
 
 ## Installation
 To install it, just use pip :
 ````
-python -m pip install guitool
+pip install guitool
 ````
+
+----------------------------------------------------
 
 ## Description
 Guitool is an open source package based on the Tkinter canvas. It offers tools and widgets already formed and linked to allow to quickly create interfaces.
 
+-----------------------------------------------------
+
+## Link
+GitHub : https://github.com/Walrick/gui_tool
+
+-----------------------------------------------------
 
 ## Use - Tutorial
 The package was developed with the idea that a graphical object can be written simply in a template and can be updated with a single method.
@@ -55,24 +64,24 @@ To be able to integrate the logic of your application, we propose this way of do
 
 ````
 racine
-├─app.py
-├─README.md
-├─.env
-├─requirements.txt
-└─ core
-    ├─ __init__.py
-    ├─ master.py
-    ├─ settings.py
-    ├─ gui
-    │    ├─ __init__.py
-    │    ├─ template_manager.py
-    │    └─ template
-    │          ├─ __init__.py
-    │          └─ first_template.py	
-    │    
-    └─ logic_app
-	    ├─ __init__.py
-		├─ master_logic.py	
+|-app.py
+|-README.md
+|-.env
+|-requirements.txt
+|- core
+    |- __init__.py
+    |- master.py
+    |- settings.py
+    |- gui
+    |    |- __init__.py
+    |    |- template_manager.py
+    |    |- template
+    |          |- __init__.py
+    |          |- first_template.py	
+    |    
+    |- logic_app
+	    |- __init__.py
+		|- master_logic.py	
 		etc...
 ````
 
@@ -187,6 +196,7 @@ Note also that it is possible to use Tkinter widgets as in the example of self.t
 The widgets of tk_gui_tools called with self.manage.create_rectangle, for example, are described in the Widget section.
 It is possible to update the template thanks to the update () method, the time defined in refresh will be used to call update (), if refresh is set to 200 ms, update () will be called every 200 ms.
 
+---------------------------------
 ## Widget
 The widgets of tk_gui_tools are widgets which are based on those of tkinter.
 Currently, rectangle, oval, and text are implemented. Button and Menu are graphic assemblies of the first three widgets.

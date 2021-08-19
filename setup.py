@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="guitool",
-    version="0.1.2",
+    version="0.1.3",
     packages=[
         "tk_gui_tools",
         "tk_gui_tools.test",
