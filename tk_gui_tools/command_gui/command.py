@@ -7,7 +7,7 @@ class CommandGUI:
     Manage command events
     """
 
-    def quit_gui(self):
+    def quit_gui(self, *args):
         """
         Destroy window and close app
         """
@@ -15,11 +15,10 @@ class CommandGUI:
         self.window.destroy()
         self.window.template = None
 
-    def fullscreen(self):
+    def fullscreen(self, *args):
         """
         Change between full screen
         """
-
         fullscreen_var = self.window.wm_attributes("-fullscreen")
         if fullscreen_var == 1:
             self.window.attributes("-fullscreen", False)

@@ -8,8 +8,9 @@ import tk_gui_tools.template_manager as template_manager
 @pytest.fixture
 def param_tkinter():
     # Init Tkinter
-    root = tk.Tk()
     time.sleep(0.1)
+    root = tk.Tk()
+    time.sleep(0.05)
     root.title("Python Project")
     root.geometry("1920x1080")
     root.attributes("-fullscreen", False)

@@ -39,3 +39,14 @@ class Dashboard(Base):
 
         # Create text
         self.text_test = self.manage.create_text(500, 500, text="test", fill="black")
+
+        # Create switch
+        self.button_switch = self.manage.create_button(400, 70)
+        self.text_state = self.manage.create_text(460, 70, text="inactif")
+
+    def update(self):
+
+        if self.button_switch.active:
+            self.text_state.update(text="actif")
+        else:
+            self.text_state.update(text="inactif")
